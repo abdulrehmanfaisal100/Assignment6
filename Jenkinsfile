@@ -51,12 +51,7 @@ pipeline {
   post {
     success {
       // Send success email
-      emailext(
-          subject: "Jenkins Pipeline Successful",
-          body: "The Jenkins pipeline has completed successfully.",
-          to: "abdulrehman.faisal@camp1.tkxel.com",
-          mimeType: 'text/html',
-      )
+      emailext body: 'Successful Pipeline', subject: 'Jenkins Success', to: 'abdulrehman.faisal1000@gmail.com'
     }
   }
 }
