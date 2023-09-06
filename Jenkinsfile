@@ -62,5 +62,10 @@ pipeline {
         sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@3.94.144.231 'sudo docker pull abdulrehman100/maven_image'"
       }
     }
+    stage('Deploying application on EC2') {
+      steps {
+        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@3.94.144.231 'sudo docker run -p 8081:8081 -e PORT=8081 c29926acff4b'"
+      }
+    }
   }
 }
