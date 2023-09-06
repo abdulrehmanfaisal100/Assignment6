@@ -54,5 +54,10 @@ pipeline {
         sh 'docker push abdulrehman100/maven_image'
       }
     }
+    stage('Access EC2 and run application') {
+      steps {
+        sh 'ssh -i ~/Downloads/Important.pem ubuntu@3.94.144.231 && sudo docker pull abdulrehman100/maven_image && sudo docker run -p 8081:8081 -e PORT=8081 c29926acff4b'
+      }
+    }
   }
 }
