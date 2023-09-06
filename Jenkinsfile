@@ -59,7 +59,7 @@ pipeline {
         label 'agent1'
       }
       steps {
-        sh "ssh -i ~/Downloads/Important.pem ubuntu@3.94.144.231 'docker pull abdulrehman100/maven_image'"
+        sh "ssh -i ~/Important.pem ubuntu@3.94.144.231 'docker pull abdulrehman100/maven_image'"
       }
     }
   }
