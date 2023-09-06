@@ -35,10 +35,10 @@ pipeline {
                 def dockerfile = './Dockerfile'
 
                 // Build the Docker image
-                def customImage = docker.build("maven_image:tag", "-f ${dockerfile} .")
+                def customImage = docker.build("abdulrehman100/maven_image:latest", "-f ${dockerfile} .")
 
                 // Push the image to a Docker registry (optional)
-                // customImage.push()
+                customImage.push()
             }
         }
     }
