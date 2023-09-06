@@ -31,19 +31,28 @@ pipeline {
         }
       }
     }
-      stage('Build Docker Image') {
-        steps {
-            script {
-                // Define the Dockerfile location
-                def dockerfile = './Dockerfile'
+    stage('Build Docker Image') {
+      steps {
+          script {
+              // Define the Dockerfile location
+              def dockerfile = './Dockerfile'
 
-                // Build the Docker image
-                def customImage = docker.build("abdulrehman100/maven_image:latest", "-f ${dockerfile} .")
+              // Build the Docker image
+              def customImage = docker.build("abdulrehman100/maven_image:latest", "-f ${dockerfile} .")
 
-                // Push the image to a Docker registry (optional)
-                customImage.push()
-            }
-        }
+              // Push the image to a Docker registry (optional)
+          }
+      }
+    }
+    stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh 'docker push abdulrehman100/maven_image'
+      }
     }
   }
 }
