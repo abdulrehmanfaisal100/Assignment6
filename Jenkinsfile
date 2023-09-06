@@ -29,4 +29,19 @@ pipeline {
       }
     }
   }
+
+  stage('Build Docker Image') {
+      steps {
+          script {
+              // Define the Dockerfile location
+              def dockerfile = './Dockerfile'
+
+              // Build the Docker image
+              def customImage = docker.build("maven_image:tag", "-f ${dockerfile} .")
+
+              // Push the image to a Docker registry (optional)
+              // customImage.push()
+          }
+      }
+  }
 }
