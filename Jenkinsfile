@@ -59,7 +59,7 @@ pipeline {
       //   label 'agent1'
       // }
       steps {
-        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@3.94.144.231 'sudp docker pull abdulrehman100/maven_image'"
+        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@3.94.144.231 'sudo docker pull abdulrehman100/maven_image'"
       }
     }
   }
