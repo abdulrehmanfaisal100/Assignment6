@@ -55,9 +55,9 @@ pipeline {
       }
     }
     stage('Access EC2 and run application') {
-      agent {
-        label 'agent1'
-      }
+      // agent {
+      //   label 'agent1'
+      // }
       steps {
         sh "ssh -i ~/Important.pem ubuntu@3.94.144.231 'docker pull abdulrehman100/maven_image'"
       }
