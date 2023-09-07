@@ -18,9 +18,6 @@ pipeline {
     }
   
     stage('Build Docker Image') {
-      agent {
-        label 'agent1'
-      }
       steps {
           script {
               // Define the Dockerfile location
