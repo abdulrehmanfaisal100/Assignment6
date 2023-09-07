@@ -57,7 +57,7 @@ pipeline {
   // }
   post{
     success {
-        emailext body: 'body', subject: 'none', to: 'abdulrehman.faisal1000@gmail.com'
+        emailext body: 'Jenkins CI/CD pipeline complete', subject: 'Build Successful', to: 'abdulrehman.faisal1000@gmail.com'
     }
   }
 }
