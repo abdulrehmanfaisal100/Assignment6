@@ -50,8 +50,8 @@ pipeline {
   //   }
   // }
   post{
-      success {
-          emailext body: 'body', subject: 'none', to: 'farhan.mansha@tkxel.io'
-      }
+    success {
+        emailext body: 'body', subject: 'none', to: 'abdulrehman.faisal1000@gmail.com'
+    }
   }
 }
