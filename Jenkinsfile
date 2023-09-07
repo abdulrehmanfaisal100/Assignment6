@@ -51,12 +51,6 @@ pipeline {
   // }
   post{
       success {
-          emailext attachLog: true, body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'abdulrehman.faisal1000@gmail.com'
-      }
-  
-
-      failure {
-          emailext attachLog: true, body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'abdulrehman.faisal1000@gmail.com'
-      }
+          emailext body: 'body', subject: 'none', to: 'farhan.mansha@tkxel.io'
   }
 }
