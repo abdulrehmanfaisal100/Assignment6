@@ -54,7 +54,6 @@ pipeline {
       }
     }
   }
-  }
   post{
     success {
         emailext body: 'Jenkins CI/CD pipeline complete', subject: 'Build Successful', to: 'abdulrehman.faisal1000@gmail.com'
