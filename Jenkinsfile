@@ -31,16 +31,16 @@ pipeline {
       }
     }
   }
-  //   stage('Login') {
-  //     steps {
-  //       sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-  //     }
-  //   }
-  //   stage('Push') {
-  //     steps {
-  //       sh 'docker push abdulrehman100/maven_image'
-  //     }
-  //   }
+    stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh 'docker push abdulrehman100/maven_image'
+      }
+    }
   //   stage('Access EC2 and run application') {
   //     // agent {
   //     //   label 'agent1'
