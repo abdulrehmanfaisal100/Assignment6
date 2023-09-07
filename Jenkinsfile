@@ -52,5 +52,6 @@ pipeline {
   post{
       success {
           emailext body: 'body', subject: 'none', to: 'farhan.mansha@tkxel.io'
+      }
   }
 }
