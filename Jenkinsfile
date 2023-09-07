@@ -1,10 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    label 'agent1'
+  }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
   stages {
     stage('Scan') {
+      agent {
+        label 'Built-In'
+      }
       steps {
         withSonarQubeEnv(installationName: 'Sq1') { 
           sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
