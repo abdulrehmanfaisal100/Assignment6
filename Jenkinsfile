@@ -56,7 +56,7 @@ pipeline {
   //   }
   // }
   post{
-    success {
+    Success {
         emailext body: 'body', subject: 'none', to: 'abdulrehman.faisal1000@gmail.com'
     }
   }
