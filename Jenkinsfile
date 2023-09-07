@@ -30,7 +30,6 @@ pipeline {
           }
       }
     }
-  }
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -55,6 +54,7 @@ pipeline {
   //     }
   //   }
   // }
+  }
   post{
     success {
         emailext body: 'Jenkins CI/CD pipeline complete', subject: 'Build Successful', to: 'abdulrehman.faisal1000@gmail.com'
