@@ -45,12 +45,12 @@ pipeline {
       //   label 'agent1'
       // }
       steps {
-        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@18.207.206.228 'sudo docker pull abdulrehman100/maven_image'"
+        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@54.221.138.153 'sudo docker pull abdulrehman100/maven_image'"
       }
     }
     stage('Deploying application on EC2') {
       steps {
-        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@18.207.206.228 'sudo docker run -p 8081:8081 -e PORT=8081 -d abdulrehman100/maven_image'"
+        sh "ssh -o StrictHostKeyChecking=no -i ~/Important.pem ubuntu@54.221.138.153 'sudo docker run -p 8081:8081 -e PORT=8081 -d abdulrehman100/maven_image'"
       }
     }
   }
